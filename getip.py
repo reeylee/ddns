@@ -1,0 +1,13 @@
+import requests
+from lxml import etree
+def get_ip(url='http://www.baidu.com/s?wd=ip'):
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36" }
+    response = requests.get(url,headers=headers)
+    response.encoding='utf-8'
+    html = etree.HTML(response.text)
+    content =  html.xpath("//div/table//tr/td/span[@class='c-gap-right']/text()")
+    ip = str(content[0]).split(':')[-1]
+    print(ip)
+
+if __name__ == "__main__":
+    get_ip()
