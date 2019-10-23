@@ -9,7 +9,7 @@ def get_ip(url='https://www.baidu.com/s?wd=ip'):
     html = etree.HTML(response.text)
     content =  html.xpath("//div/table//tr/td/span[@class='c-gap-right']/text()")
     try:
-        ip = str(content[0]).split(':')[-1]
+        ip = str(content[0]).split(':')[-1].strip()
     except:
         ip = '无法获取ip'
     return ip

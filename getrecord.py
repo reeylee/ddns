@@ -5,9 +5,9 @@ from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 from aliyunsdkalidns.request.v20150109.DescribeDomainRecordsRequest import DescribeDomainRecordsRequest
-
+from json import loads,dumps,load,dump
 from content import accessSecret, accessKeyId
-def getrecordid():
+def get_record():
 
     client = AcsClient(accessKeyId, accessSecret, 'cn-hangzhou')
 
@@ -15,11 +15,12 @@ def getrecordid():
     request.set_accept_format('json')
 
     request.set_DomainName("henqy.club")
-    request.set_RRKeyWord("ddns")
+    #request.set_RRKeyWord(rr)
     response = client.do_action_with_exception(request)
-    return response
+    record = loads(response)['DomainRecords']['Record']
+    return record
 # python2:  print(response) 
 if __name__ == "__main__":
-    response = getrecordid()
-    print(str(response, encoding='utf-8'))
+    record = get_record('blog')
+    print(record)
 
