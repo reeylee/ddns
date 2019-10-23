@@ -1,4 +1,5 @@
 import requests
+import sys
 from lxml import etree
 def get_ip(url='https://www.baidu.com/s?wd=ip'):
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36", 
@@ -16,3 +17,6 @@ def get_ip(url='https://www.baidu.com/s?wd=ip'):
 
 if __name__ == "__main__":
     print(get_ip())
+    print(sys.path.append(".."))
+    from content import accessKeyId as ac
+    print(ac)

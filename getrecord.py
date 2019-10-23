@@ -6,9 +6,12 @@ from aliyunsdkcore.acs_exception.exceptions import ClientException
 from aliyunsdkcore.acs_exception.exceptions import ServerException
 from aliyunsdkalidns.request.v20150109.DescribeDomainRecordsRequest import DescribeDomainRecordsRequest
 from json import loads,dumps,load,dump
-from content import accessSecret, accessKeyId
-def get_record():
 
+import sys
+sys.path.append("..")
+from content import accessSecret, accessKeyId
+
+def get_record():
     client = AcsClient(accessKeyId, accessSecret, 'cn-hangzhou')
 
     request = DescribeDomainRecordsRequest()

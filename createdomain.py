@@ -4,6 +4,8 @@ from aliyunsdkcore.acs_exception.exceptions import ServerException
 from aliyunsdkalidns.request.v20150109.UpdateDomainRecordRequest import UpdateDomainRecordRequest
 from aliyunsdkalidns.request.v20150109.AddDomainRecordRequest import AddDomainRecordRequest
 
+import sys
+sys.path.append("..")
 from content import accessKeyId, accessSecret
 
 from getip import get_ip 
