@@ -5,8 +5,7 @@ from aliyunsdkalidns.request.v20150109.UpdateDomainRecordRequest import UpdateDo
 
 from content import accessKeyId, accessSecret
 
-from getip import get_ip 
-def update(record_id,ip):
+def update(record_id,rr,ip):
     client = AcsClient(accessKeyId, accessSecret, 'cn-hangzhou')
 
     request = UpdateDomainRecordRequest()
@@ -14,7 +13,7 @@ def update(record_id,ip):
 
     
     request.set_RecordId(record_id)
-    request.set_RR("blog")
+    request.set_RR(rr)
     request.set_Type("A")
     request.set_Value(ip)
 
