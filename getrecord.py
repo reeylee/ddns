@@ -11,19 +11,24 @@ import sys
 sys.path.append("..")
 from content import accessSecret, accessKeyId
 
-def get_record():
+def get_record(rr='all'):
     client = AcsClient(accessKeyId, accessSecret, 'cn-hangzhou')
 
     request = DescribeDomainRecordsRequest()
     request.set_accept_format('json')
 
     request.set_DomainName("henqy.club")
-    #request.set_RRKeyWord(rr)
+    if rr=='all':
+        pass
+    else:
+        request.set_RRKeyWord(rr)
     response = client.do_action_with_exception(request)
     record = loads(response)['DomainRecords']['Record']
     return record
 # python2:  print(response) 
 if __name__ == "__main__":
-    record = get_record('blog')
+    record = get_record()
+    for i in record:
+        print(i)
     print(record)
 
