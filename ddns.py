@@ -1,3 +1,5 @@
+ # encoding: utf-8
+ 
 from getrecord import get_record
 from getip import get_ip
 from updatedomain import update
