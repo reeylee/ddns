@@ -1,0 +1,15 @@
+您的域名有：
+0:blog.henqy.club
+1:www.henqy.club
+请输入您要更新的域名序号：{'code': 1, 'msg': '更新失败'}
+您的域名有：
+0:blog.henqy.club
+1:www.henqy.club
+请输入您要更新的域名序号：{'code': 1, 'msg': '更新失败'}
+您的域名有：
+0:blog.henqy.club
+1:www.henqy.club
+请输入您要更新的域名序号：Traceback (most recent call last):
+  File "ddns.py", line 52, in <module>
+    sleep(10)
+KeyboardInterrupt
