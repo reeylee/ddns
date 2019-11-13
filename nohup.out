@@ -1,5 +1,0 @@
-{'code': 0, 'msg': "域名：['blog', 'www']不需要更新"}
-Traceback (most recent call last):
-  File "ddns.py", line 62, in <module>
-    sleep(300)      
-KeyboardInterrupt
