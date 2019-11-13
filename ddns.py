@@ -62,13 +62,13 @@ if __name__ == "__main__":
             if status['code'] == OK or status['code']==NOUPDATE:
                 print(status)
                 start_status = start_check()
-                sleep(10)
+                sleep(300)
             else:
                 start_status = start_check()
                 status = ddns(old_ip,ip,start_status['data'])
                 print(status)
-                sleep(10)
+                sleep(300)
         else:
             print(status)
             start_status = start_check()
-            sleep(10)
+            sleep(300)
