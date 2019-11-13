@@ -11,14 +11,14 @@ import sys
 sys.path.append("..")
 from content import accessSecret, accessKeyId
 
-def get_record(rr='all'):
+def get_record(rr=None):
     client = AcsClient(accessKeyId, accessSecret, 'cn-hangzhou')
 
     request = DescribeDomainRecordsRequest()
     request.set_accept_format('json')
 
     request.set_DomainName("henqy.club")
-    if rr=='all':
+    if not rr:
         pass
     else:
         request.set_RRKeyWord(rr)

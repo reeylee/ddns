@@ -1,0 +1,4 @@
+# 定义状态常量
+OK = 0
+FAILD =1
+NOUPDATE=2
